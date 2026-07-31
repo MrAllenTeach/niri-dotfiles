@@ -1,11 +1,11 @@
 # =============================================================================
 # GREETD / TUIGREET CONFIGURATION FILE (/etc/greetd/config.toml)
-# Customized for Niri + Noctalia Slate-Blue Theme
+# Streamlined Slate-Blue Theme using native tuigreet ANSI color specifiers
 # =============================================================================
 
 [terminal]
 vt = 1
 
 [default_session]
-command = "tuigreet --time --time-format '%A, %d %B %I:%M %p' --remember --remember-session --asterisks --theme 'border=#7D98B3;title=#DCE4EE;prompt=#7D98B3;time=#98ACB9;action=#5B7F95' --greeting 'ThunderdomePC | Niri Desktop' --cmd niri"
+command = "tuigreet --time --time-format '%A, %d %B %I:%M %p' --remember --remember-session --asterisks --asterisks-char '•' --user-menu --greet-align center --container-padding 2 --window-padding 1 --theme 'border=blue;title=bright-cyan;prompt=blue;time=bright-blue;action=cyan;button=blue' --greeting 'ThunderdomePC | Niri Desktop' --cmd niri"
 user = "greetd"
