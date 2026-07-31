@@ -1,0 +1,15 @@
+# =============================================================================
+# GREETD / TUIGREET CONFIGURATION FILE (/etc/greetd/config.toml)
+# Customized for Niri + Noctalia Slate-Blue Theme
+# =============================================================================
+
+[terminal]
+# The VT (Virtual Terminal) where greetd runs
+vt = 1
+
+[default_session]
+# tuigreet launch command with custom slate-blue theme & 12h clock
+command = "tuigreet --time '%A, %d %B %I:%M %p' --remember --remember-user-session --asterisks --theme 'border=#7D98B3;title=#DCE4EE;prompt=#7D98B3;time=#98ACB9;action=#5B7F95' --greeting 'ThunderdomePC | Niri Desktop' --cmd niri"
+
+# The user under which the login greeter runs
+user = "greeter"
