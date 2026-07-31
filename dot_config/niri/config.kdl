@@ -1,0 +1,153 @@
+// =============================================================================
+// NIRI CONFIGURATION FILE (config.kdl)
+// Pure Floating Glass Control Center
+// Left-Hand Ergonomic Keybindings + Native Noctalia Shell & Launcher
+// =============================================================================
+
+input {
+    keyboard {
+        xkb {
+            layout "us"
+        }
+        repeat-delay 300
+        repeat-rate 30
+    }
+
+    touchpad {
+        tap
+        natural-scroll
+        accel-speed 0.2
+        dwt
+    }
+
+    mouse {
+        accel-speed 0.0
+    }
+}
+
+output "eDP-1" {
+    mode "1920x1080@60"
+    scale 1.0
+    transform "normal"
+    position x=0 y=0
+}
+
+layout {
+    gaps 8
+
+    center-focused-column "never"
+
+    preset-column-widths {
+        proportion 0.33333
+        proportion 0.5
+        proportion 0.66667
+    }
+
+    default-column-width { proportion 0.5; }
+
+    focus-ring {
+        width 2
+        active-color "#7D98B3"
+        inactive-color "#2B2D3A80"
+    }
+
+    border {
+        off
+    }
+
+    shadow {
+        off
+    }
+}
+
+prefer-no-csd
+
+window-rule {
+    opacity 0.96
+    geometry-corner-radius 16
+    clip-to-geometry true
+}
+
+window-rule {
+    match app-id="pavucontrol"
+    match app-id="swappy"
+    open-floating true
+}
+
+// Startup Applications
+spawn-at-startup "noctalia"
+
+cursor {
+    xcursor-theme "Adwaita"
+    xcursor-size 24
+}
+
+// Left-Hand Ergonomic Keybindings
+binds {
+    Super+Tab { toggle-overview; }
+
+    Super+Q      { spawn "kitty"; }
+    Super+Return { spawn "kitty"; }
+    Super+W      { close-window; }
+    Super+E      { spawn "kitty" "-e" "yazi"; }
+    Super+A      { spawn "noctalia" "msg" "panel-toggle" "launcher"; }
+    Super+S      { switch-preset-column-width; }
+    Super+D      { spawn "noctalia" "msg" "panel-toggle" "launcher"; }
+    Super+F      { fullscreen-window; }
+    Super+M      { maximize-column; }
+    Super+V      { toggle-window-floating; }
+    Super+C      { center-column; }
+    Super+X      { spawn "noctalia" "msg" "panel-toggle" "session"; }
+    Super+L      { spawn "noctalia" "msg" "session" "lock"; }
+    Super+Z      { reset-window-height; }
+
+    Super+Left  { focus-column-left; }
+    Super+Right { focus-column-right; }
+    Super+Up    { focus-workspace-up; }
+    Super+Down  { focus-workspace-down; }
+
+    Super+Shift+Left  { move-column-left; }
+    Super+Shift+Right { move-column-right; }
+    Super+Shift+Up    { move-column-to-workspace-up; }
+    Super+Shift+Down  { move-column-to-workspace-down; }
+
+    Super+1 { focus-workspace 1; }
+    Super+2 { focus-workspace 2; }
+    Super+3 { focus-workspace 3; }
+    Super+4 { focus-workspace 4; }
+    Super+5 { focus-workspace 5; }
+
+    Super+Shift+1 { move-column-to-workspace 1; }
+    Super+Shift+2 { move-column-to-workspace 2; }
+    Super+Shift+3 { move-column-to-workspace 3; }
+    Super+Shift+4 { move-column-to-workspace 4; }
+    Super+Shift+5 { move-column-to-workspace 5; }
+
+    Super+Minus       { set-column-width "-10%"; }
+    Super+Equal       { set-column-width "+10%"; }
+    Super+Shift+Minus { set-window-height "-10%"; }
+    Super+Shift+Equal { set-window-height "+10%"; }
+
+    XF86AudioRaiseVolume allow-when-locked=true { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "5%+"; }
+    XF86AudioLowerVolume allow-when-locked=true { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "5%-"; }
+    XF86AudioMute        allow-when-locked=true { spawn "wpctl" "set-mute" "@DEFAULT_AUDIO_SINK@" "toggle"; }
+    XF86AudioMicMute     allow-when-locked=true { spawn "wpctl" "set-mute" "@DEFAULT_AUDIO_SOURCE@" "toggle"; }
+
+    XF86AudioPlay  allow-when-locked=true { spawn "playerctl" "play-pause"; }
+    XF86AudioPause allow-when-locked=true { spawn "playerctl" "pause"; }
+    XF86AudioNext  allow-when-locked=true { spawn "playerctl" "next"; }
+    XF86AudioPrev  allow-when-locked=true { spawn "playerctl" "previous"; }
+
+    XF86MonBrightnessUp   allow-when-locked=true { spawn "brightnessctl" "set" "+10%"; }
+    XF86MonBrightnessDown allow-when-locked=true { spawn "brightnessctl" "set" "10%-"; }
+
+    XF86PowerOff { spawn "wlogout"; }
+
+    Print         { screenshot; }
+    Super+Shift+S { screenshot; }
+    Alt+Print     { spawn "sh" "-c" "grim -g \"$(slurp)\" - | swappy -f -"; }
+    Super+Print   { screenshot-window; }
+
+    Super+Shift+Slash { show-hotkey-overlay; }
+    Super+Shift+E { quit; }
+}

@@ -1,0 +1,17 @@
+[shell]
+font_family = "JetBrainsMono Nerd Font"
+
+[[bar]]
+name = "default"
+position = "top"
+height = 32
+margin_top = 0
+margin_left = 0
+margin_right = 0
+margin_bottom = 0
+spacing = 18
+full_width = true
+
+left = ["niri_workspaces", "mpris", "tray"]
+center = ["clock"]
+right = ["network", "battery", "cpu", "temperature", "memory", "volume"]

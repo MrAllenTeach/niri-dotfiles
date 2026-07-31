@@ -1,0 +1,81 @@
+/* =============================================================================
+   CATPPUCCIN DARK GLASS GTK3 STYLESHEET (~/.config/gtk-3.0/gtk.css)
+   Clean Translucent Dark Theme for File Pickers & GTK Applications
+   ============================================================================= */
+
+/* Headerbars & Titlebars */
+headerbar, .titlebar {
+    background-color: #1E202E;
+    color: #CDD6F4;
+    border-bottom: 1px solid rgba(203, 166, 247, 0.2);
+    box-shadow: none;
+}
+
+headerbar button {
+    border-radius: 10px;
+    background: rgba(45, 48, 66, 0.7);
+    color: #CDD6F4;
+    border: none;
+}
+
+headerbar button:hover {
+    background: #CBA6F7;
+    color: #11111B;
+}
+
+/* Sidebars */
+sidebar, .sidebar, placessidebar {
+    background-color: #12131C;
+    color: #CDD6F4;
+    border-right: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+sidebar row:selected, placessidebar row:selected {
+    background-color: rgba(203, 166, 247, 0.25);
+    color: #CBA6F7;
+    border-radius: 10px;
+}
+
+/* File View Grid & List */
+iconview, listview, treeview, .view {
+    background-color: #181A24;
+    color: #CDD6F4;
+}
+
+iconview:selected, listview row:selected, treeview row:selected {
+    background-color: rgba(203, 166, 247, 0.3);
+    color: #CDD6F4;
+    border-radius: 8px;
+}
+
+/* Specific File Chooser & Dialog Window Styling */
+.file-chooser, filechooser, .file-chooser-dialog, dialog {
+    background-color: rgba(24, 26, 36, 0.94);
+    color: #CDD6F4;
+    border-radius: 16px;
+}
+
+/* General Buttons & Entries */
+button {
+    border-radius: 10px;
+    background-color: rgba(45, 48, 66, 0.6);
+    color: #CDD6F4;
+    border: 1px solid rgba(203, 166, 247, 0.2);
+}
+
+button:hover {
+    background-color: #CBA6F7;
+    color: #11111B;
+}
+
+entry {
+    background-color: rgba(30, 32, 46, 0.75);
+    color: #CDD6F4;
+    border: 1px solid rgba(203, 166, 247, 0.4);
+    border-radius: 10px;
+}
+
+entry:focus {
+    border-color: #CBA6F7;
+    box-shadow: 0 0 8px rgba(203, 166, 247, 0.4);
+}

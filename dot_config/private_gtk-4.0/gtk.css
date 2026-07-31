@@ -1,0 +1,53 @@
+/* =============================================================================
+   CATPPUCCIN DARK GLASS GTK4 STYLESHEET (~/.config/gtk-4.0/gtk.css)
+   Clean Translucent Dark Theme for LibAdwaita & GTK4 Applications
+   ============================================================================= */
+
+@define-color window_bg_color #181A24;
+@define-color window_fg_color #CDD6F4;
+@define-color view_bg_color #181A24;
+@define-color view_fg_color #CDD6F4;
+@define-color headerbar_bg_color #1E202E;
+@define-color headerbar_fg_color #CDD6F4;
+@define-color sidebar_bg_color #12131C;
+@define-color sidebar_fg_color #CDD6F4;
+@define-color card_bg_color rgba(45, 48, 66, 0.65);
+@define-color card_fg_color #CDD6F4;
+@define-color accent_color #CBA6F7;
+@define-color accent_bg_color #CBA6F7;
+@define-color accent_fg_color #11111B;
+
+.view, .content, adw-clamp, adw-status-page, .preferences-page {
+    background-color: #181A24;
+    color: #CDD6F4;
+}
+
+headerbar {
+    background-color: #1E202E;
+    border-bottom: 1px solid rgba(203, 166, 247, 0.2);
+    color: #CDD6F4;
+}
+
+sidebar, placessidebar, .navigation-sidebar {
+    background-color: #12131C;
+    color: #CDD6F4;
+}
+
+button {
+    border-radius: 10px;
+    background-color: rgba(45, 48, 66, 0.6);
+    color: #CDD6F4;
+    border: 1px solid rgba(203, 166, 247, 0.2);
+}
+
+button:hover {
+    background-color: #CBA6F7;
+    color: #11111B;
+}
+
+entry {
+    background-color: rgba(30, 32, 46, 0.75);
+    color: #CDD6F4;
+    border: 1px solid rgba(203, 166, 247, 0.4);
+    border-radius: 10px;
+}
