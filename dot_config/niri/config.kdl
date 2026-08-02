@@ -89,7 +89,7 @@ binds {
     Super+Q      { spawn "kitty"; }
     Super+Return { spawn "kitty"; }
     Super+W      { close-window; }
-    Super+E      { spawn "kitty" "-e" "yazi"; }
+    Super+E      { spawn "thunar"; }
     Super+A      { spawn "noctalia" "msg" "panel-toggle" "launcher"; }
     Super+S      { switch-preset-column-width; }
     Super+D      { spawn "noctalia" "msg" "panel-toggle" "launcher"; }
